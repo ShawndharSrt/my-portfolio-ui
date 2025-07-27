@@ -1,0 +1,31 @@
+footer {
+    background-color: black;
+    color: white;
+    height: 8rem;
+    position: relative;
+    padding: 2rem;
+
+    p {
+        margin: 0 0 1rem;
+        display: flex;
+        justify-content: center;
+        font-size: small;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+
+        a {
+            color: white;
+            font-size: 1.2rem;
+            transition: transform 0.2s ease, color 0.2s ease;
+
+            &:hover {
+                color: #20c997;
+                transform: scale(1.2);
+            }
+        }
+    }
+}

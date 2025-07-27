@@ -1,0 +1,124 @@
+.section {
+  padding: 2rem;
+  text-align: center;
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    
+  }
+
+
+  .section-subtitle {
+    color: gray;
+    margin-bottom: 2rem;
+  }
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+
+  .about-image {
+    flex: 1;
+    min-width: 280px;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  .about-content {
+    flex: 2;
+    min-width: 280px;
+    text-align: left;
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .italic-text {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .about-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 1rem;
+
+      p {
+        margin: 1rem 0;
+      }
+    }
+
+    .about-description {
+      margin-top: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+  }
+}
+
+.skills {
+  margin-top: 3rem;
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+    .skill-item {
+      .skill-label {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+      }
+
+      .skill-bar {
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        height: 10px;
+        margin-top: 0.3rem;
+
+        .skill-fill {
+          height: 100%;
+          background-color: #2db1a9;
+          border-radius: 5px;
+          transition: width 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .skills .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// .section-title h2 ::after {
+//       content: "ss";
+//       position: absolute;
+//       display: block;
+//       width: 50px;
+//       height: 3px;
+//       background: #2db1a9;
+//       left: 0;
+//       right: 0;
+//       bottom: 0;
+//       margin: auto;
+//   }

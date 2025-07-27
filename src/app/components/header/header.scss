@@ -1,0 +1,132 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(231, 231, 231);
+    height: 6rem;
+    padding: 0.5rem;
+    transition: all 0.5s;
+    // box-shadow: 0 2px 4px rgba(14, 13, 13, 0.1);
+    box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-weight: 200;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1.5rem;
+
+    .hamburger {
+        display: none;
+        font-size: 2rem;
+        color: black;
+        cursor: pointer;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+}
+
+// Existing styles...
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+
+  li a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: rgb(242, 80, 80);
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none; // Hide on mobile
+  }
+}
+
+.hamburger {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4); // translucent dark background
+  backdrop-filter: blur(6px); // BLUR effect
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  &.active {
+    display: flex;
+  }
+
+  // Inner content wrapper
+  .mobile-menu-content {
+    background-color: rgb(231, 231, 231);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: calc(100% - 2rem); // 2rem left + 2rem right
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+  }
+
+  .mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    li a {
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        color: rgb(242, 80, 80);
+      }
+    }
+  }
+}
+
+

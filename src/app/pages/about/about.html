@@ -1,0 +1,65 @@
+<section class="about section" id="about">
+  <h2 class="section-title" @fadeSlideIn>About</h2>
+  <p class="section-subtitle" @fadeSlideIn>
+    Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+  </p>
+
+  <div class="about-container">
+    <div class="about-image" @fadeSlideIn>
+      <img src="assets/images/3Dboy2.jpg" alt="Profile Image" />
+    </div>
+
+    <div class="about-content" @fadeSlideIn>
+      <h3>Full Stack Developer.</h3>
+      <p class="italic-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+
+      <div class="about-info">
+        <div>
+          <p><strong>Birthday:</strong> 19 Dec 1999</p>
+          <p><strong>Website:</strong> www.example.com</p>
+          <p><strong>Phone:</strong> +91 6382123904</p>
+          <p><strong>City:</strong> Chennai, India</p>
+        </div>
+        <div>
+          <p><strong>Age:</strong> 25</p>
+          <p><strong>Degree:</strong> Master</p>
+          <p><strong>Email:</strong> b.p.shawndharsrt10@gmail.com</p>
+          <p><strong>Freelance:</strong> Available</p>
+        </div>
+      </div>
+
+      <p class="about-description">
+        Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
+      </p>
+    </div>
+  </div>
+
+  <div class="skills">
+    <h2 class="section-title" @fadeSlideIn>Skills</h2>
+    <p class="section-subtitle" @fadeSlideIn>
+      Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+    </p>
+
+    <div class="skills-grid">
+      <div
+        class="skill-item"
+        *ngFor="let skill of skills; let i = index"
+        @fadeSlideIn
+      >
+        <div class="skill-label">
+          <span>{{ skill.name }}</span>
+          <span>{{ animatedSkills[i] }}%</span>
+        </div>
+        <div class="skill-bar">
+          <div
+            #skillBar
+            class="skill-fill"
+            [style.width.%]="animatedSkills[i]"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

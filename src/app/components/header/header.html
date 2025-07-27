@@ -1,0 +1,35 @@
+<header>
+  <nav class="nav-items">
+    <h2>SHAWNDHAR</h2>
+
+    <!-- Hamburger icon (shown on mobile) -->
+    <div class="hamburger" (click)="toggleMenu()">
+      &#9776;
+    </div>
+
+    <!-- Fullscreen overlay menu -->
+    <div class="mobile-menu" [class.active]="isMenuOpen">
+      <div class="mobile-menu-content">
+        <div class="close-btn" (click)="toggleMenu()">&times;</div>
+        <ul class="mobile-nav-links">
+      <li *ngFor="let link of navLinks">
+    <a [routerLink]="link.href" (click)="toggleMenu()">{{ link.label }}</a>
+  </li>
+    </ul>
+      </div>
+    </div>  
+
+
+    <!-- Desktop nav (only visible on large screens) -->
+    <ul class="nav-links">
+      <li *ngFor="let link of navLinks">
+    <a [routerLink]="link.href">{{ link.label }}</a>
+  </li>
+    </ul>
+
+    <!-- Theme toggle -->
+    <!-- <span class="theme-toggle" (click)="toggleTheme()">
+      {{ themeService.isDarkMode() ? '☀️' : '🌙' }}
+    </span> -->
+  </nav>
+</header>
