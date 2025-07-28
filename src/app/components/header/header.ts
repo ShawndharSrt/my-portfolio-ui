@@ -13,8 +13,8 @@ import { RouterModule } from '@angular/router';
 export class Header {
 
   themeService = inject(ThemeService);
-  isMenuOpen : boolean = false;
-  navLinks : { label:string, href: string }[] = [
+  isMenuOpen: boolean = false;
+  navLinks: { label: string, href: string }[] = [
     { label: 'Home', href: '' },
     { label: 'About', href: 'about' },
     { label: 'Resume', href: 'resume' },

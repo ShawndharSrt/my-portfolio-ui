@@ -2,7 +2,7 @@
   <nav class="nav-items">
     <h2>SHAWNDHAR</h2>
 
-    <!-- Hamburger icon (shown on mobile) -->
+    <!-- Hamburger icon (shown on small screen) -->
     <div class="hamburger" (click)="toggleMenu()">
       &#9776;
     </div>
@@ -12,19 +12,18 @@
       <div class="mobile-menu-content">
         <div class="close-btn" (click)="toggleMenu()">&times;</div>
         <ul class="mobile-nav-links">
-      <li *ngFor="let link of navLinks">
-    <a [routerLink]="link.href" (click)="toggleMenu()">{{ link.label }}</a>
-  </li>
-    </ul>
+          <li *ngFor="let link of navLinks">
+            <a [routerLink]="link.href" (click)="toggleMenu()">{{ link.label }}</a>
+          </li>
+        </ul>
       </div>
-    </div>  
-
+    </div>
 
     <!-- Desktop nav (only visible on large screens) -->
     <ul class="nav-links">
       <li *ngFor="let link of navLinks">
-    <a [routerLink]="link.href">{{ link.label }}</a>
-  </li>
+        <a [routerLink]="link.href">{{ link.label }}</a>
+      </li>
     </ul>
 
     <!-- Theme toggle -->

@@ -1,11 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import {
-  trigger,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
 import { CommonModule } from '@angular/common';
+import { fadeSlideIn } from '../../shared/animations/animations';
 
 @Component({
   selector: 'app-about',
@@ -13,25 +8,19 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './about.html',
   styleUrl: './about.scss',
-  animations: [
-    trigger('fadeSlideIn', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(20px)' }),
-        animate('600ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
-      ]),
-    ]),
-  ],
+  animations: [fadeSlideIn],
 })
 export class About implements OnInit, AfterViewInit {
 
   animatedSkills: number[] = [];
   skills = [
     { name: 'JAVA', value: 100 },
-    { name: 'CSS', value: 90 },
-    { name: 'JAVASCRIPT', value: 75 },
-    { name: 'PHP', value: 80 },
-    { name: 'WORDPRESS/CMS', value: 90 },
-    { name: 'PHOTOSHOP', value: 55 },
+    { name: 'TYPESCRIPT', value: 90 },
+    { name: 'MONGODB', value: 75 },
+    { name: 'SPRING BOOT', value: 80 },
+    { name: 'JENKINS', value: 90 },
+    { name: 'HTML', value: 55 },
+    { name: 'SCSS', value: 55 },
   ];
 
   @ViewChildren('skillBar') skillBars!: QueryList<ElementRef>;

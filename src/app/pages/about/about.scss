@@ -1,13 +1,12 @@
-.section {
+.about-section {
   padding: 2rem;
   text-align: center;
 
   .section-title {
+    margin: 1rem;
     font-size: 2rem;
     font-weight: bold;
-    
   }
-
 
   .section-subtitle {
     color: gray;
@@ -38,6 +37,7 @@
     text-align: left;
 
     h3 {
+      margin-bottom: 1rem;
       font-size: 1.5rem;
       font-weight: bold;
     }
@@ -109,16 +109,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-// .section-title h2 ::after {
-//       content: "ss";
-//       position: absolute;
-//       display: block;
-//       width: 50px;
-//       height: 3px;
-//       background: #2db1a9;
-//       left: 0;
-//       right: 0;
-//       bottom: 0;
-//       margin: auto;
-//   }

@@ -1,1 +1,56 @@
-<p>contact works!</p>
+<section class="contact" [@fadeSlideIn]>
+  <h2 class="section-title">Contact</h2>
+  <p class="section-subtitle">Connect with me</p>
+
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <div class="info-item">
+        <div class="icon">
+          <fa-icon [icon]="faLocation"></fa-icon>
+        </div>
+        <div class="details">
+          <h4>Location</h4>
+          <p>Chennai, India</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="icon">
+          <fa-icon [icon]="faEnvelope"></fa-icon>
+        </div>
+        <div class="details">
+          <h4>Email</h4>
+          <p>b.p.shawndharsrt10@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="icon">
+          <fa-icon [icon]="faCall"></fa-icon>
+        </div>
+        <div class="details">
+          <h4>Call</h4>
+          <p>+91 63821 23904</p>
+        </div>
+      </div>
+
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="contact-form" [@fadeSlideIn]>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <input type="text" formControlName="name" placeholder="Your Name" />
+          <input type="email" formControlName="email" placeholder="Your Email" />
+        </div>
+        <input type="text" formControlName="subject" placeholder="Subject" />
+        <textarea formControlName="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>

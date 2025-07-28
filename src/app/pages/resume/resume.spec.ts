@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Resume } from './resume';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
 describe('Resume', () => {
   let component: Resume;
@@ -8,7 +10,11 @@ describe('Resume', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Resume]
+      imports: [Resume],
+       providers: [
+        provideZonelessChangeDetection(),
+        provideNoopAnimations()
+      ]
     })
     .compileComponents();
 
