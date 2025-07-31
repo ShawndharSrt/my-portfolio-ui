@@ -1,0 +1,23 @@
+<div class="chat-widget">
+  <div class="chat-box" [class.open]="isOpen">
+    <div class="chat-header" (click)="toggleChat()">
+      <span>🤖 Ask AI</span>
+    </div>
+
+    <div class="chat-body" *ngIf="isOpen">
+      <div class="chat-messages">
+        <div *ngFor="let msg of messages" [ngClass]="msg.sender" class="chat-message">
+          <span>{{ msg.text }}</span>
+        </div>
+        <div *ngIf="isLoading" class="chat-message bot typing">
+          <span>Typing...</span>
+        </div>
+      </div>
+
+      <div class="chat-input">
+        <input [(ngModel)]="userInput" (keyup.enter)="sendMessage()" placeholder="Type your message..." />
+        <button (click)="sendMessage()">➤</button>
+      </div>
+    </div>
+  </div>
+</div>

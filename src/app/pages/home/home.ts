@@ -1,9 +1,10 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { fadeInUp } from '../../shared/animations/animations';
+import { ChatAi } from '../../shared/components/chat-ai/chat-ai';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [ChatAi],
   templateUrl: './home.html',
   styleUrl: './home.scss',
   animations: [fadeInUp]

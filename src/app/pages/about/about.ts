@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { fadeSlideIn } from '../../shared/animations/animations';
 
@@ -13,6 +13,7 @@ import { fadeSlideIn } from '../../shared/animations/animations';
 export class About implements OnInit, AfterViewInit {
 
   animatedSkills: number[] = [];
+  isLoading: boolean = true;
   skills = [
     { name: 'JAVA', value: 100 },
     { name: 'TYPESCRIPT', value: 90 },
@@ -25,6 +26,8 @@ export class About implements OnInit, AfterViewInit {
 
   @ViewChildren('skillBar') skillBars!: QueryList<ElementRef>;
 
+  constructor(private cdr: ChangeDetectorRef){}
+
   ngOnInit(): void {
     this.animatedSkills = this.skills.map(() => 0);
   }
@@ -34,9 +37,10 @@ export class About implements OnInit, AfterViewInit {
       this.skills.forEach((skill, index) => {
         setTimeout(() => {
           this.animatedSkills[index] = skill.value;
-        }, index * 150); // staggered animation
+          this.cdr.detectChanges();
+        }, index * 150);
       });
-    }, 300); // initial delay
+    }, 300);
   }
 
 }

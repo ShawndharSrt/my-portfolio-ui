@@ -1,8 +1,18 @@
+<app-loader></app-loader>
 <section class="resume-section" id="resume">
-  <div class="section-header" [@fadeSlideIn]>
-    <h2 class="section-title">{{ sectionTitle }}</h2>
-    <p class="section-subtitle">{{ sectionSubtitle }}</p>
+  <div class="section-header-with-button" [@fadeSlideIn]>
+    <div class="section-header">
+      <h2 class="section-title">{{ sectionTitle }}</h2>
+      <p class="section-subtitle">{{ sectionSubtitle }}</p>
+    </div>
+
+    <div class="download-button">
+      <button (click)="downloadResume()" class="btn-download">
+        <fa-icon [icon]="faDownload"></fa-icon> Download Resume
+      </button>
+    </div>
   </div>
+
 
   <div class="resume-container">
     <div class="resume-left">

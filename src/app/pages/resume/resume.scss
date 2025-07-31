@@ -2,22 +2,35 @@
   padding: 3rem 2rem 10rem 2rem;
   background-color: #f9f9f9;
 
-  .section-title {
-    margin: 1rem 0;
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
+  .section-header-with-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
 
-    &::after {
-      content: "";
-      position: absolute;
-      width: 60px;
-      height: 3px;
-      background: #2db1a9;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
+    .section-header {
+      text-align: center;
+      flex: 1;
+
+      .section-title {
+        margin: 1rem 0;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 60px;
+          height: 3px;
+          background: #2db1a9;
+          bottom: -8px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
     }
   }
 
@@ -95,6 +108,36 @@
 
     .section-title {
       font-size: 1.7rem;
+    }
+  }
+}
+
+.download-button {
+  margin-left: auto;
+
+  .btn-download {
+    background-color: #2db1a9;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #238f87;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header-with-button {
+    flex-direction: column;
+    align-items: center;
+
+    .download-button {
+      margin-left: 0;
     }
   }
 }
