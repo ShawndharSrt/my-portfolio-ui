@@ -1,6 +1,6 @@
 <section class="contact" [@fadeSlideIn]>
   <h2 class="section-title">Contact</h2>
-  <p class="section-subtitle">Connect with me</p>
+  <p class="section-subtitle">Don’t be shy — say hi 👋</p>
 
   <div class="contact-wrapper">
     <div class="contact-info">
@@ -43,11 +43,11 @@
     <div class="contact-form" [@fadeSlideIn]>
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="form-row">
-          <input type="text" formControlName="name" placeholder="Your Name" />
-          <input type="email" formControlName="email" placeholder="Your Email" />
+          <input type="text" formControlName="name" placeholder="Name" />
+          <input type="email" formControlName="email" placeholder="Email" />
         </div>
         <input type="text" formControlName="subject" placeholder="Subject" />
-        <textarea formControlName="message" placeholder="Your Message"></textarea>
+        <textarea formControlName="message" placeholder="Message"></textarea>
         <button type="submit">Send Message</button>
       </form>
     </div>

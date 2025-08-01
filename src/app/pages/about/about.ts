@@ -16,17 +16,21 @@ export class About implements OnInit, AfterViewInit {
   isLoading: boolean = true;
   skills = [
     { name: 'JAVA', value: 100 },
+    { name: 'MONGODB', value: 100 },
+    { name: 'SPRING BOOT', value: 100 },
     { name: 'TYPESCRIPT', value: 90 },
-    { name: 'MONGODB', value: 75 },
-    { name: 'SPRING BOOT', value: 80 },
-    { name: 'JENKINS', value: 90 },
-    { name: 'HTML', value: 55 },
-    { name: 'SCSS', value: 55 },
+    { name: 'ANGULAR', value: 90 },
+    { name: 'HTML', value: 80 },
+    { name: 'SCSS', value: 80 },
+    { name: 'SQL', value: 70 },
+    { name: 'JAVASCRIPT', value: 50 },
+    { name: 'DROOLS', value: 50 }
   ];
+
 
   @ViewChildren('skillBar') skillBars!: QueryList<ElementRef>;
 
-  constructor(private cdr: ChangeDetectorRef){}
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.animatedSkills = this.skills.map(() => 0);

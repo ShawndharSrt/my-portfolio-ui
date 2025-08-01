@@ -37,7 +37,7 @@ export class Resume implements OnInit {
       degree: 'Bachelor of Engineering - B.E, Civil Engineering',
       period: '2018 - 2021',
       place: ' Nandha Engineering College',
-      description: 'Scored average of <strong>8.05 CGPA</strong> out of 10 over 8 semesters'
+      description: 'Graduated with an average CGPA of <strong>8.05</strong> out of 10 across 8 semesters.'
     },
     {
       degree: 'Biology, General',
@@ -57,7 +57,7 @@ export class Resume implements OnInit {
     {
       role: 'Associate Software Engineer',
       period: 'Apr 2025 - Present | Chennai, Tamil Nadu, India',
-      place: 'Clarium Tech Private Limited - US Based Banking',
+      place: 'Clarium Tech Private Limited - (PNC US Based Banking)',
       responsibilities: [
         'Collaborating with cross-functional teams to design, develop, and maintain enterprise-grade banking modules using Angular and Java Spring Boot.',
         'Implementing secure RESTful APIs and integrating MongoDB for document-based data storage and complex querying.'
@@ -66,7 +66,7 @@ export class Resume implements OnInit {
     {
       role: 'Software Engineer',
       period: 'Apr 2024 - Jul 2025 | Chennai, Tamil Nadu, India',
-      place: 'Clarium Tech Private Limited - US Based Banking',
+      place: 'Clarium Tech Private Limited - (PNC US Based Banking)',
       responsibilities: [
         'Developed dynamic PDF reports using iText library to generate complex tabular data layouts in real time.',
         'Utilized Apache POI to create automated and stylized Excel reports from Java services',
@@ -76,7 +76,7 @@ export class Resume implements OnInit {
     {
       role: 'Trainee Software Engineer',
       period: 'Jan 2022 - Apr 2024 | Chennai, Tamil Nadu, India',
-      place: 'Clarium Tech Private Limited - US Based Banking',
+      place: 'Clarium Tech Private Limited - (PNC US Based Banking)',
       responsibilities: [
         'Built responsive user interfaces using Syncfusion Angular UI components',
         'Conducted a POC on Drools to integrate business rule management for the loan processing module.',
