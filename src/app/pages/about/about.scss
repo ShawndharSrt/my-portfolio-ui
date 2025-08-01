@@ -108,3 +108,15 @@
     grid-template-columns: 1fr;
   }
 }
+
+.my-portfolio {
+  color: #17b38a;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #169775;
+    text-decoration: underline;
+  }
+}

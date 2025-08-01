@@ -1,3 +1,25 @@
-.certification {
-    height: 52rem;
+.section {
+    padding: 2rem;
+    height: 55rem;
+    text-align: center;
+
+    .section-title {
+        margin: 1rem;
+        font-size: 2rem;
+        font-weight: bold;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #2db1a9;
+            margin: 0.5rem auto 0;
+        }
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+        color: #777;
+    }
 }
