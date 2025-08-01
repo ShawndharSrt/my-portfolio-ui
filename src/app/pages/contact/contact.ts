@@ -1,11 +1,9 @@
-import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, DestroyRef, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faTelegram } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faLocation, faLocationArrow, faLocationCrosshairs, faLocationDot, faLocationPin, faLocationPinLock, faMapLocation, faMapLocationDot, faMobile, faMobileAlt, faMobileAndroid, faMobileAndroidAlt, faMobileButton, faMobileRetro, faMobileScreenButton, faMobileVibrate, faPhone, faSearchLocation, faTeletype, faTelevision } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { SnackbarService } from '../../shared/services/snackbar.service';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { fadeSlideIn } from '../../shared/animations/animations';
 import { ContactServices } from './services/contact-services';
@@ -28,7 +26,7 @@ export class Contact {
   faCall = faPhone;
   private destroyRef = inject(DestroyRef);
 
-  constructor(private fb: FormBuilder, private snackbar: SnackbarService,
+  constructor(private fb: FormBuilder, private snackbar: SnackbarService, 
     private contactService: ContactServices) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -46,7 +44,7 @@ export class Contact {
         this.contactForm.reset();
       })
     } else {
-      this.snackbar.error('Please fill all required fields!');
+      this.snackbar.error('Please fill all the fields!');
     }
   }
 }
