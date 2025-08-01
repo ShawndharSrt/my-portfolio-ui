@@ -19,7 +19,8 @@
       <div class="about-info">
         <div>
           <p><strong>Birthday:</strong> 19 Dec 1999</p>
-          <p><strong>Website:</strong><a class="my-portfolio" href="https://shawndhar-portfolio.netlify.app"> Portfolio</a></p>
+          <p><strong>Website:</strong><a class="my-portfolio" href="https://shawndhar-portfolio.netlify.app">
+              Portfolio</a></p>
           <p><strong>Phone:</strong> +91 6382123904</p>
           <p><strong>City:</strong> Chennai, India</p>
         </div>
@@ -54,15 +55,17 @@
     </p>
 
     <div class="skills-grid">
-      <div class="skill-item" *ngFor="let skill of skills; let i = index" [@fadeSlideIn]>
+      @for(skill of skills; track skill) {
+      <div class="skill-item" [@fadeSlideIn]>
         <div class="skill-label">
           <span>{{ skill.name }}</span>
-          <span>{{ animatedSkills[i] }}%</span>
+          <span>{{ animatedSkills[$index] }}%</span>
         </div>
         <div class="skill-bar">
-          <div #skillBar class="skill-fill" [style.width.%]="animatedSkills[i]"></div>
+          <div #skillBar class="skill-fill" [style.width.%]="animatedSkills[$index]"></div>
         </div>
       </div>
+      }
     </div>
   </div>
 </section>

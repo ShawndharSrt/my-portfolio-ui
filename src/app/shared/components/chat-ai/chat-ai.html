@@ -4,14 +4,19 @@
       <span>🤖 Ask AI</span>
     </div>
 
-    <div class="chat-body" *ngIf="isOpen">
+    @if(isOpen) {
+    <div class="chat-body">
       <div class="chat-messages">
-        <div *ngFor="let msg of messages" [ngClass]="msg.sender" class="chat-message">
+        @for(msg of messages; track msg) {
+        <div [ngClass]="msg.sender" class="chat-message">
           <span>{{ msg.text }}</span>
         </div>
-        <div *ngIf="isLoading" class="chat-message bot typing">
+        }
+        @if(isLoading) {
+        <div class="chat-message bot typing">
           <span>Typing...</span>
         </div>
+        }
       </div>
 
       <div class="chat-input">
@@ -19,5 +24,7 @@
         <button (click)="sendMessage()">➤</button>
       </div>
     </div>
+    }
+
   </div>
 </div>

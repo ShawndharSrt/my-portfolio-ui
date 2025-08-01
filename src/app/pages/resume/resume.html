@@ -22,21 +22,25 @@
         <h4 class="resume-title">{{ summary.name }}</h4>
         <p class="resume-subtitle">{{ summary.description }}</p>
         <ul class="resume-list">
-          <li *ngFor="let detail of summary.details">
+          @for(detail of summary.details; track detail) {
+          <li>
             {{ detail.text }}
           </li>
+          }
         </ul>
       </div>
 
       <!-- Education -->
       <div class="resume-box" [@fadeSlideIn]>
         <h3 class="resume-heading">EDUCATION</h3>
-        <div class="resume-item" *ngFor="let edu of education">
+        @for(edu of education; track edu){
+        <div class="resume-item">
           <h4 class="resume-title">{{ edu.degree }}</h4>
           <p class="resume-subtitle">{{ edu.period }}</p>
           <p class="resume-place">{{ edu.place }}</p>
           <p class="resume-desc" [innerHTML]="edu.description"></p>
         </div>
+        }
       </div>
     </div>
 
@@ -44,14 +48,18 @@
       <!-- Experience -->
       <div class="resume-box" [@fadeSlideIn]>
         <h3 class="resume-heading">WORK EXPERIENCE</h3>
-        <div class="resume-item" *ngFor="let job of experience">
+        @for(job of experience; track job) {
+        <div class="resume-item">
           <h4 class="resume-title">{{ job.role }}</h4>
           <p class="resume-subtitle">{{ job.period }}</p>
           <p class="resume-place">{{ job.place }}</p>
           <ul class="resume-list">
-            <li *ngFor="let point of job.responsibilities">{{ point }}</li>
+            @for(point of job.responsibilities; track point) {
+            <li>{{ point }}</li>
+            }
           </ul>
         </div>
+        }
       </div>
     </div>
   </div>
