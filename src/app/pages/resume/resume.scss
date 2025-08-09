@@ -56,7 +56,7 @@
     .resume-box {
       background: white;
       padding: 1.5rem;
-      border-left: 4px solid #2db1a9;
+      // border-left: 4px solid #2db1a9;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       border-radius: 8px;
 
@@ -99,7 +99,6 @@
   }
 }
 
-// 🔽 Responsive
 @media (max-width: 768px) {
   .resume-section {
     .resume-container {
@@ -138,6 +137,80 @@
 
     .download-button {
       margin-left: 0;
+    }
+  }
+}
+
+
+/* Timeline container inside resume-box */
+.resume-box.timeline {
+  position: relative;
+  padding-left: 2.5rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0rem;
+    top: 0.1rem;
+    bottom: 0;
+    width: 2px;
+    background-color: #2db1a9;
+  }
+
+  .resume-item {
+    position: relative;
+    padding-bottom: 2rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -1.9rem;
+      top: 0rem;
+      width: 8px;
+      height: 8px;
+      background-color: white;
+      border: 3px solid #2db1a9;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    .resume-title {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .resume-subtitle {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 0.4rem;
+    }
+
+    .resume-place {
+      font-size: 0.9rem;
+      color: #444;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .resume-desc {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.4;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-box.timeline {
+    padding-left: 2rem;
+
+    &::before {
+      left: 0rem;
     }
   }
 }

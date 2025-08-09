@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Contact } from './contact';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('Contact', () => {
   let component: Contact;
@@ -13,7 +14,8 @@ describe('Contact', () => {
       imports: [Contact],
        providers: [
         provideZonelessChangeDetection(),
-        provideNoopAnimations()
+        provideNoopAnimations(),
+        provideHttpClient()
       ]
     })
     .compileComponents();

@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChatAi } from './chat-ai';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('ChatAi', () => {
   let component: ChatAi;
@@ -8,7 +10,11 @@ describe('ChatAi', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ChatAi]
+      imports: [ChatAi],
+      providers: [
+        provideZonelessChangeDetection(),
+        provideHttpClient()
+      ]
     })
     .compileComponents();
 

@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Certification } from './certification';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
 describe('Certification', () => {
   let component: Certification;
@@ -11,7 +12,8 @@ describe('Certification', () => {
     await TestBed.configureTestingModule({
       imports: [Certification],
        providers: [
-        provideZonelessChangeDetection()
+        provideZonelessChangeDetection(),
+        provideNoopAnimations()
       ]
     })
     .compileComponents();

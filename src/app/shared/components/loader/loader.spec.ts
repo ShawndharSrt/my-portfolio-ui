@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Loader } from './loader';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideZoneChangeDetection, provideZonelessChangeDetection } from '@angular/core';
 
 describe('Loader', () => {
   let component: Loader;
@@ -8,7 +10,11 @@ describe('Loader', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Loader]
+      imports: [Loader],
+      providers: [
+        provideZonelessChangeDetection(),
+        provideNoopAnimations()
+      ]
     })
       .compileComponents();
 
